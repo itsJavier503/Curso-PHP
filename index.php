@@ -1,3 +1,16 @@
+<?php
+
+$contacts = [
+  ["name" => "Pepe", "phone_number" => "2132139"],
+  ["name" => "Antonio", "phone_number" => "982392"],
+  ["name" => "Nate", "phone_number" => "329847"],
+  ["name" => "Rodrigo", "phone_number" => "4353234"],
+  ["name" => "Marcos", "phone_number" => "12312432"],
+];
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,7 +59,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="./index.html">Home</a>
+            <a class="nav-link" href="#">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./add.html">Add Contact</a>
@@ -57,38 +70,22 @@
   </nav>
 
   <main>
-    <div class="container pt-5">
-      <div class="row justify-content-center">
-        <div class="col-md-8">
-          <div class="card">
-            <div class="card-header">Add New Contact</div>
-            <div class="card-body">
-              <form>
-                <div class="mb-3 row">
-                  <label for="name" class="col-md-4 col-form-label text-md-end">Name</label>
-    
-                  <div class="col-md-6">
-                    <input id="name" type="text" class="form-control" name="name" required autocomplete="name" autofocus>
-                  </div>
-                </div>
-    
-                <div class="mb-3 row">
-                  <label for="phone_number" class="col-md-4 col-form-label text-md-end">Phone Number</label>
-    
-                  <div class="col-md-6">
-                    <input id="phone_number" type="tel" class="form-control" name="phone_number" required autocomplete="phone_number" autofocus>
-                  </div>
-                </div>
-    
-                <div class="mb-3 row">
-                  <div class="col-md-6 offset-md-4">
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                  </div>
-                </div>
-              </form>
+    <div class="container pt-4 p-3">
+      <div class="row">
+        
+        <?php foreach ($contacts as $contact): ?>
+          <div class="col-md-4 mb-3">
+            <div class="card text-center">
+              <div class="card-body">
+                <h3 class="card-title text-capitalize"><?= $contact["name"] ?></h3>
+                <p class="m-2"><?= $contact["phone_number"] ?></p>
+                <a href="#" class="btn btn-secondary mb-2">Edit Contact</a>
+                <a href="#" class="btn btn-danger mb-2">Delete Contact</a>
+              </div>
             </div>
           </div>
-        </div>
+        <?php endforeach ?>
+
       </div>
     </div>
   </main>
