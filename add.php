@@ -46,7 +46,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="./index.html">Home</a>
+            <a class="nav-link" href="./index.php">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./add.html">Add Contact</a>
@@ -63,7 +63,7 @@
           <div class="card">
             <div class="card-header">Add New Contact</div>
             <div class="card-body">
-              <form>
+              <form method="$_POST" action="add.php">
                 <div class="mb-3 row">
                   <label for="name" class="col-md-4 col-form-label text-md-end">Name</label>
     
